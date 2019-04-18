@@ -1,7 +1,7 @@
 defmodule NervesSystemRpi.MixProject do
   use Mix.Project
 
-  @app :nerves_system_rpi
+  @app :makerion_system_rpi
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -35,7 +35,7 @@ defmodule NervesSystemRpi.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
+        {:github_releases, "makerion/#{@app}"}
       ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
@@ -64,9 +64,10 @@ defmodule NervesSystemRpi.MixProject do
 
   defp package do
     [
+      maintainers: ["Timothy Mecklem"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"GitHub" => "https://github.com/makerion/#{@app}"}
     ]
   end
 
